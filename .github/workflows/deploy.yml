@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (updated)
 
 on:
   push:
@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      - uses: actions/setup-node@v3  # Removed node-version specification
       - run: npm install
-      - run: npm run build
-      - uses: actions/deploy-pages@v3
+      - run: npm run build  # Assuming you use npm for building your Vite React project
+      - uses: actions/deploy-pages@v3  # Replace with your deployment action if needed
